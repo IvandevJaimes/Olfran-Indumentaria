@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+    .titleCarousel{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.cardSectionCategorias{
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.79) 0%, rgba(155, 42, 104, 0.25) 36%, rgba(199, 87, 175, 0.4) 65%, rgba(0, 0, 0, 0.93) 100%);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 30px;
+    width: 100%;
+}
+

@@ -1,0 +1,115 @@
+.olfranLogo2 {
+  width: 50px;
+}
+
+.searchButtonMb button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  border-radius: 50px;
+}
+.searchButtonMb {
+  display: none;
+}
+
+.searchBar input {
+  color: white;
+  outline: none;
+  width: 500px;
+  height: 40px;
+  border-radius: 8px;
+}
+.searchBar {
+  margin-right: 20px;
+}
+
+.loginButton button {
+  background: #770e8f;
+  background: linear-gradient(
+    97deg,
+    rgba(119, 14, 143, 1) 0%,
+    rgba(179, 34, 87, 1) 30%,
+    rgba(58, 9, 59, 1) 100%
+  );
+  padding: 10px 10px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 100ms ease-in-out;
+
+  cursor: pointer;
+}
+
+.loginButton button:hover {
+  transform: scale(1.03);
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .searchBar {
+    display: none;
+  }
+
+  .searchButtonMb {
+    display: flex;
+  }
+
+  @media (min-width: 400px) and (max-width: 500px) {
+    .olfranLogo2 {
+      width: 42px;
+    }
+
+    .olfranTitle span:first-child {
+      font-size: 20px;
+    }
+    .olfranSubTitle {
+      font-size: 13px;
+    }
+    .loginButton button {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 11px;
+      gap: 5px;
+    }
+    .searchButtonMb button {
+      padding: 8px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 11px;
+      gap: 5px;
+    }
+  }
+  @media (min-width: 300px) and (max-width: 400px) {
+    .olfranLogo2 {
+      width: 39px;
+    }
+
+    .olfranTitle span:first-child {
+      font-size: 17px;
+    }
+    .olfranSubTitle {
+      font-size: 10px;
+    }
+    .loginButton button {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 10px;
+      gap: 5px;
+    }
+    .searchButtonMb button {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 10px;
+      gap: 5px;
+    }
+  }
+}
+
+.openSidebar {
+  display: flex;
+}
