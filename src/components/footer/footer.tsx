@@ -1,58 +1,44 @@
 import React from "react";
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
 import "./footer.css";
+import UpBtn from '../utils/buttons/buttonDesign1'
+import links from '../../links/links.json'
+import locationpng from '../../assets/location.png'
 
-import olfranLogoSecundario from "../../assets/olfranLogoSecundario.png";
 
 const Footer = () => {
-  const volverArriba = () => {
+  const returnUp = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="bg-gray-900 text-gray-400">
+    <div className="text-muted footer">
       <div className="mx-auto w-full max-w-screen-xl p-6">
         <div className="flex flex-col items-center gap-10">
-          <div className="flex flex-col items-center">
-            <a href="#" className="flex items-center mb-4">
-              <img
-                src={olfranLogoSecundario}
-                className="h-8 me-3"
-                alt="Logo Olfran"
-              />
-              <span className="self-center text-2xl font-semibold text-white">
-                Olfran
-              </span>
-            </a>
-            <p className="text-center text-sm text-gray-500 mb-2">
-              Calidad y estilo en cada prenda.
-            </p>
-          </div>
-
           <div className="links">
-            <div className="grid text-center md:grid-cols-4 sm:grid-cols-2 gap-8">
+            <div className="grid text-center md:grid-cols-4 sm:grid-cols-2 gap-8 linksGrid">
               <div>
                 <h2 className="mb-4 text-sm font-semibold uppercase text-white">
                   Enlaces útiles
                 </h2>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="hover:underline">
-                      Nosotros
+                    <a href="#" className="hover:underline text-gray-700">
+                      Inicio
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
-                      Tienda
+                    <a href="#" className="hover:underline text-gray-700">
+                      Servicios
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
-                      Preguntas Frecuentes
+                    <a href="#" className="hover:underline text-gray-700">
+                      Cursos
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       Contacto
                     </a>
                   </li>
@@ -65,17 +51,17 @@ const Footer = () => {
                 </h2>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       Instagram
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       TikTok
                     </a>
                   </li>
@@ -88,12 +74,12 @@ const Footer = () => {
                 </h2>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       Política de Privacidad
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
                       Términos y Condiciones
                     </a>
                   </li>
@@ -106,18 +92,18 @@ const Footer = () => {
                 </h2>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="hover:underline">
-                      Envíos y Devoluciones
+                    <a href="#" className="hover:underline text-gray-700">
+                      Horarios de atención
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline text-gray-700">
+                      ¿Cómo reservar una cita?
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:underline text-gray-700">
                       Métodos de Pago
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Ayuda en Línea
                     </a>
                   </li>
                 </ul>
@@ -126,66 +112,101 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-8 border-gray-700" />
+
+        <hr className="my-8" />
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-          <span className="text-sm text-gray-400 text-center sm:text-left">
+          
+          <a href={links.locations.location} target="blank" className="adress text-l  items-center text-bold text-gray-800 text-center sm:text-left hover:underline">
+            <img src={locationpng} className="w-3 h-3 text-white"/>
+            <p>{links.locations.reference}</p>
+          </a>
+        
+          <span className="text-sm text-white text-center sm:text-left">
             © 2025{" "}
-            <a href="#" className="hover:underline text-white">
-              Olfran
+            <a href="#" className="hover:underline ">
+              Manos de Diosa
             </a>
             . Todos los derechos reservados.
           </span>
 
           <div className="flex justify-center space-x-6">
             {/* Facebook */}
-            <a href="#" className="hover:text-white">
+            <a href="#" className="text-gray-700 hover:text-on-accent transition-colors duration-200 ">
               <svg
-                className="w-5 h-5"
+                className="w-6 h-6"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
                 fill="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.407 0 22.675 0z" />
+                <path
+                  fill-rule="evenodd"
+                  d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                  clip-rule="evenodd"
+                />
               </svg>
             </a>
 
             {/* WhatsApp */}
-            <a href="#" className="hover:text-white">
+            <a href="#" className="text-gray-700 hover:text-on-accent transition-colors duration-200 ml-2">
               <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 32 32"
+                className="w-6 h-6 t"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.738 5.458 2.025 7.764L0 32l8.449-2.018C10.542 31.262 13.211 32 16 32 24.837 32 32 24.837 32 16S24.837 0 16 0zm8.52 23.563c-.336.944-1.998 1.8-2.77 1.92-1.46.224-3.16.326-5.13-.116-5.75-1.178-9.466-6.576-9.79-6.916-.33-.346-2.74-3.32-2.74-6.333 0-3.012 1.55-4.492 2.09-5.11.544-.623 1.178-.764 1.554-.764.392 0 .78.01 1.126.01.362 0 .846-.14 1.323.994.477 1.136 1.622 3.932 1.765 4.226.143.296.236.658.024 1.064-.212.405-.31.654-.625 1.016-.312.362-.662.805-.94 1.086-.28.28-.56.593-.28 1.174.28.578 1.234 2.048 2.64 3.31 1.806 1.58 3.287 2.08 3.878 2.318.588.236.933.198 1.277-.118.344-.314 1.39-1.626 1.777-2.293.386-.664.77-.577 1.278-.35.507.228 3.018 1.426 3.541 1.682.524.257.876.385 1.01.598.136.212.136 1.243-.2 2.184z" />
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill="currentColor"
+                  d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+                />
               </svg>
             </a>
 
             {/* Instagram */}
-            <a href="#" className="hover:text-white">
+            <a href="#" className="text-gray-700 hover:text-on-accent transition-colors duration-200 ml-2">
               <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
+                className="w-6 h-6 "
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.773.131 4.602.38 3.635 1.348c-.967.967-1.217 2.138-1.276 3.417C2.013 6.741 2 7.151 2 10.41v3.179c0 3.259.013 3.669.072 4.949.059 1.279.309 2.45 1.276 3.417.967.967 2.138 1.217 3.417 1.276 1.279.059 1.689.072 4.949.072s3.669-.013 4.949-.072c1.279-.059 2.45-.309 3.417-1.276.967-.967 1.217-2.138 1.276-3.417.059-1.28.072-1.689.072-4.949V10.41c0-3.259-.013-3.669-.072-4.949-.059-1.279-.309-2.45-1.276-3.417-.967-.967-2.138-1.217-3.417-1.276C15.669.013 15.259 0 12 0z" />
-                <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z" />
-                <circle cx="18.406" cy="5.594" r="1.44" />
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+             {/* TikTok (icono estilizado) */}
+            <a href="#" aria-label="TikTok" className="text-gray-700 hover:text-on-accent transition-colors duration-200">
+              <svg className="h-7" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                <path d="M16.5 2c-.3 0-.6.1-.8.3-.2.2-.3.5-.3.8v7.1c0 .6-.5 1.1-1.1 1.1-1.6 0-2.9 1.3-2.9 2.9 0 1.6 1.3 2.9 2.9 2.9 2.2 0 4-1.8 4-4V6.6c.9.5 2 .8 3.1.8v-2c-1.3 0-2.6-.4-3.6-1z" />
               </svg>
             </a>
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <button
-            onClick={volverArriba}
-            className="flex items-center gap-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full px-4 py-2 transition"
-          >
+        <div className="mt-8 flex justify-center ">
+          <UpBtn onClick={returnUp} size="md" className="upBtn flex items-center text-center gap-2 " textColor="white">
             <ArrowUpCircleIcon className="w-6 h-6" />
             <span>Volver arriba</span>
-          </button>
+          </UpBtn>
         </div>
       </div>
     </div>

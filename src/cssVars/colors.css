@@ -1,0 +1,173 @@
+:root{
+    /* --- Rosa pastel -> Blanco/Crema (light palette) --- */
+    --white: #ffffff;
+    --pink-50:  #fff7fb; /* casi blanco, uso fondo */
+    --pink-100: #ffeef6;
+    --pink-200: #ffd7ea;
+    --pink-300: #ffb8d6;
+    --pink-400: #ff91c0;
+    --pink-500: #ff5f9d; /* color base/acento */
+    --pink-600: #e34f86;
+    --pink-700: #b33763;
+    --pink-800: #7f2348;
+    --pink-900: #4b1128;
+  
+    --cream-50:  #fffdf8;
+    --cream-100: #fff9f0;
+    --cream-200: #fff2e2;
+    --cream-250: #fff1df;
+    --cream-300: #ffe9d0;
+    --cream-400: #ffdfbd;
+    --cream-500: #ffd6a6; /* tono crema medio */
+  
+    /* neutrales suaves */
+    --muted-100: #fbf8f9;
+    --muted-200: #f4f0f2;
+    --muted-300: #eae3e6;
+    --text-dark:  #231f20; /* texto en modo claro */
+  
+    /* Accesibles y de soporte */
+    --accent: var(--pink-500);
+    --accent-contrast: var(--white);
+  
+    /* Elevación / sombras (suaves para paleta pastel) */
+    --shadow-1: 4px 0 8px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 2px 8px rgba(35,31,32,0.04);
+    --shadow-3: 3px 0 6px rgba(0, 0, 0, 0.08);
+    --shadow-4: 2px 5px 8px rgba(128, 128, 128, 0.459);
+
+
+  
+    /* --- Gradientes sobre la misma gama --- */
+   
+  /* --- Gradients: many two-color variants --- */
+  --g-pink-cream: linear-gradient(135deg, var(--pink-100) 0%, var(--cream-100) 100%);
+  --g-pink-white: linear-gradient(180deg, var(--pink-50) 0%, var(--white) 100%);
+  --g-pink-deep: linear-gradient(135deg, var(--pink-500) 0%, var(--pink-700) 100%);
+  --g-cream-white: linear-gradient(90deg, var(--cream-100) 0%, var(--white) 100%);
+  --g-pink-soft: linear-gradient(120deg, rgba(255,95,157,0.12) 0%, rgba(255,214,166,0.08) 100%);
+  --g-pink-warm: linear-gradient(45deg, var(--pink-300) 0%, var(--cream-300) 100%);
+  --g-pink-cool: linear-gradient(135deg, var(--pink-200) 0%, #fff7fb 100%);
+  --g-accent-soft: linear-gradient(90deg, rgba(255,95,157,0.18) 0%, rgba(255,214,166,0.12) 100%);
+  --g-pink-lift: linear-gradient(180deg, rgba(255,95,157,0.06) 0%, rgba(255,255,255,0.0) 80%);
+  --g-pink-glow: linear-gradient(90deg, rgba(255,95,157,0.14), rgba(255,95,157,0.06));
+  --g-cream-vanish: linear-gradient(181deg, rgba(255, 186, 207, 1) 0%, rgba(255, 214, 203, 1) 30%, rgba(255, 226, 201, 0.55) 66%, rgba(255, 238, 199, 0) 100%);
+
+  /* --- Gradients: radial & conic --- */
+  --g-radial-soft: radial-gradient(600px 300px at 10% 10%, rgba(255,95,157,0.12), transparent 40%);
+  --g-radial-cream: radial-gradient(circle at 80% 20%, rgba(255,214,166,0.18), transparent 45%);
+  --g-conic-pastel: conic-gradient(from 200deg at 50% 50%, var(--pink-100), var(--cream-100), var(--white));
+
+  /* --- Gradients with subtle overlays (for cards, overlays) --- */
+  --g-overlay-pink: linear-gradient(180deg, rgba(255,95,157,0.06) 0%, rgba(255,214,166,0.04) 100%);
+  --g-overlay-cream: linear-gradient(180deg, rgba(255,214,166,0.08) 0%, rgba(255,255,255,0.0) 60%);
+
+  /* --- Multi-stop two-color variants with angles --- */
+  --g-pink-45: linear-gradient(45deg, var(--pink-100) 0%, var(--pink-300) 50%, var(--cream-100) 100%);
+  --g-pink-90: linear-gradient(90deg, var(--pink-200) 0%, var(--pink-500) 50%);
+  --g-cream-sheen: linear-gradient(160deg, var(--cream-200) 0%, var(--white) 100%);
+
+  /* --- Three-color gradients (smooth blends) --- */
+  --g3-pastel-sunrise: linear-gradient(90deg, var(--pink-100) 0%, var(--cream-200) 50%, var(--white) 100%);
+  --g3-pink-cream-deep: linear-gradient(135deg, var(--pink-200) 0%, var(--pink-500) 45%, var(--pink-700) 100%);
+  --g3-cream-peach-pink: linear-gradient(120deg, var(--cream-100) 0%, #ffe0c7 50%, var(--pink-300) 100%);
+  --g3-soft-trio: linear-gradient(45deg, rgba(255,95,157,0.16) 0%, rgba(255,214,166,0.12) 48%, rgba(255,255,255,0.0) 100%);
+  --g3-subtle-layer: linear-gradient(180deg, rgba(255,95,157,0.08) 0%, rgba(255,214,166,0.06) 40%, rgba(255,255,255,0.02) 100%);
+
+  /* --- Three-color dramatic / accent gradients --- */
+  --g3-accent-pop: linear-gradient(90deg, #ffb8d6 0%, #ff5f9d 50%, #b33763 100%);
+  --g3-warm-to-deep: linear-gradient(135deg, var(--cream-200) 0%, var(--pink-400) 50%, var(--pink-700) 100%);
+  --g3-frosted: linear-gradient(180deg, var(--pink-50) 0%, var(--cream-100) 60%, rgba(255,255,255,0.5) 100%);
+  
+    /* Utilidades para componentes */
+    --bg: var(--muted-100);
+    --card-bg: var(--white);
+    --muted-text: #6b6467;
+    --btn-bg: var(--accent);
+    --btn-text: var(--accent-contrast);
+  }
+  
+  [data-theme="dark"]{
+    /* --- Colores oscuros para modo oscuro --- */
+    --dark-900: #0b0710; /* fondo principal muy oscuro */
+    --dark-800: #121017;
+    --dark-700: #1c151e;
+    --dark-600: #2b1a23;
+  
+    /* versiones profundas del rosa para acentos en modo oscuro */
+    --pink-dark-900: #2a0713;
+    --pink-dark-800: #3b0b1a;
+    --pink-dark-700: #5a2236;
+    --pink-dark-600: #7a2f4a;
+    --pink-dark-500: #9a3f63;
+  
+    --bg: var(--dark-900);
+    --card-bg: var(--dark-800);
+    --text-dark: #efe7ea; /* texto claro sobre oscuro */
+    --muted-text: #cbbfc4;
+  
+    /* acento más saturado para destacar sobre fondo oscuro */
+    --accent: var(--pink-dark-500);
+    --btn-text: #fff;
+  
+    /* Gradientes oscuros */
+    --g-pink-dark: linear-gradient(135deg, var(--pink-dark-700) 0%, var(--pink-dark-900) 100%);
+    --g-accent-dark-soft: linear-gradient(90deg, rgba(154,63,99,0.28) 0%, rgba(58,27,35,0.08) 100%);
+    --g-radial-dark: radial-gradient(600px 300px at 90% 20%, rgba(154,63,99,0.12), transparent 40%);
+  
+    /* sombras para modo oscuro (débiles y direccionales) */
+    --shadow-1: 0 10px 30px rgba(0,0,0,0.6);
+    --shadow-2: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   Utilidades tipo Tailwind
+   Usan las variables definidas arriba
+   Puedes usar en JSX: className="bg-accent text-on-accent hover:bg-pink-600"
+   También soporta clases con prefijos hover: y focus: usando el selector escapado
+   ========================== */
+
+/* Backgrounds y textos */
+.bg-accent { background-color: var(--accent) !important; }
+.text-accent { color: var(--accent) !important; }
+.bg-card { background-color: var(--card-bg) !important; }
+.bg-page { background-color: var(--bg) !important; }
+.text-dark { color: var(--text-dark) !important; }
+.text-muted { color: var(--muted-text) !important; }
+.text-on-accent { color: var(--accent-contrast) !important; }
+
+/* Bordes y sombras */
+.border-accent { border-color: var(--accent) !important; }
+.box-shadow-soft { box-shadow: var(--shadow-1); }
+.box-shadow-subtle { box-shadow: var(--shadow-2); }
+
+
+
+/* Gradientes */
+.bg-g-pink-cream { background: var(--g-pink-cream) !important; }
+.bg-g-pink-white { background: var(--g-pink-white) !important; }
+.bg-g-pink-deep { background: var(--g-pink-deep) !important; }
+.bg-g-radial-soft { background: var(--g-radial-soft) !important; }
+
+/* Hover y Focus helpers (escaping colon para poder escribir className="hover:bg-accent") */
+.hover\:bg-accent:hover { background-color: var(--accent) !important; }
+.hover\:text-accent:hover { color: var(--accent) !important; }
+.hover\:bg-card:hover { background-color: var(--card-bg) !important; }
+.hover\:text-on-accent:hover { color: var(--accent-contrast) !important; }
+
+.focus\:ring-accent:focus {
+  box-shadow: 0 0 0 6px rgba(255,95,157,0.12); /* suave alrededor */
+}
+
+/* Utilities adicionales */
+.text-cream { color: var(--cream-500) !important; }
+.bg-cream { background-color: var(--cream-500) !important; }
+
+/* Small helpers para reemplazar clases Tailwind comunes */
+.bg-gray-900 { background-color: var(--dark-900) !important; }
+.bg-gray-800 { background-color: var(--dark-800) !important; }
+.text-white { color: var(--white) !important; }
+.text-gray-400 { color: var(--muted-text) !important; }
+
+/* Fin de utilidades */
+

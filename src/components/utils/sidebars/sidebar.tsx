@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { createPortal } from 'react-dom';
 import './sidebar.css';
 
 interface SidebarProps {
@@ -8,31 +9,53 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
 
-  return (
+  useEffect(() => {
+
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
+  const node = (
     <>
       {/* Fondo oscuro */}
       <div
+        id="sidebar-overlay"
         onClick={handleClose}
-        className={`fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300 ${
-          open ? "opacity-100 visible" : "opacity-0 invisible"
+        aria-hidden={!open}
+        style={{
+          display: open ? 'block' : 'none',
+          opacity: open ? 1 : 0,
+          backgroundColor: 'rgba(0,0,0,0.6)',
+          transition: 'opacity 300ms ease-in-out, visibility 300ms ease-in-out',
+          position: 'fixed',
+          inset: 0,
+          zIndex: 99999,
+        }}
+        className={`transition-opacity duration-300 ease-in-out ${
+          open ? "pointer-events-auto" : "pointer-events-none"
         }`}
       ></div>
 
       {/* Sidebar */}
       <div
         id="drawer-navigation"
-        className={`sideBar fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto bg-gray-900 transform transition-transform duration-300 ${
+        style={{ zIndex: 100000, position: 'fixed', top: 0, left: 0 }}
+        className={`sideBar w-64 h-screen p-4 overflow-y-auto bg-gray-900 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
         tabIndex={-1}
         aria-labelledby="drawer-navigation-label"
       >
-        <h5
+        <h3
           id="drawer-navigation-label"
-          className="text-base font-semibold text-gray-200 "
+          className=" font-semibold text-gray-700"
         >
           Menú
-        </h5>
+        </h3>
 
         <button
           type="button"
@@ -61,10 +84,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-white rounded-lg hover:bg-gray-600 hover:text-white transition-colors group"
+                className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-100 ease-in-out"
               >
                 <svg
-                  className="w-5 h-5 text-gray-300 transition duration-75 group-hover:text-white"
+                  className="w-5 h-5 text-gray-700"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -79,10 +102,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-white rounded-lg hover:bg-gray-600 hover:text-white transition-colors group"
+                className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-100 ease-in-out"
               >
                 <svg
-                  className="w-5 h-5 text-gray-300 transition duration-75 group-hover:text-white"
+                  className="w-5 h-5 text-gray-700"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -96,10 +119,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-white rounded-lg hover:bg-gray-600 hover:text-white transition-colors group"
+                className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-100 ease-in-out"
               >
                 <svg
-                  className="w-5 h-5 text-gray-300 transition duration-75 group-hover:text-white"
+                  className="w-5 h-5 text-gray-700"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -113,10 +136,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-white rounded-lg hover:bg-gray-600 hover:text-white transition-colors group"
+                className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-100 ease-in-out"
               >
                 <svg
-                  className="w-5 h-5 text-gray-300 transition duration-75 group-hover:text-white"
+                  className="w-5 h-5 text-gray-700"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -130,10 +153,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-white rounded-lg hover:bg-gray-600 hover:text-white transition-colors group"
+                className="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-200 transition duration-100 ease-in-out"
               >
                 <svg
-                  className="w-5 h-5 text-gray-300 transition duration-75 group-hover:text-white"
+                  className="w-5 h-5 text-gray-700"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -149,6 +172,8 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleClose }) => {
       </div>
     </>
   );
+
+  return typeof document !== 'undefined' ? createPortal(node, document.body) : node;
 };
 
 export default Sidebar;

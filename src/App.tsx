@@ -1,51 +1,43 @@
-import React from 'react'
-import { useState } from 'react'
-import './App.css'
+import React from "react";
+import { useState } from "react";
 
-import './components/main/main.css'
-import Navbar from './components/header/navbar.tsx'
-import Footer from './components/footer/footer.tsx'
-import Title from "./components/main/title.tsx";
-import CarrouselMain from "./components/main/carrouselMain.tsx";
-import Sidebar from './components/utils/sidebars/sidebar.tsx'
-import CardSection1 from './components/main/cardSectionColecciones.tsx'
-import CardSection2 from './components/main/cardSectionCategorias.tsx'
+import Navbar from "./components/header/navbar.tsx";
+import MainPage from "./components/mainPage/mainPage.tsx";
+import Footer from "./components/footer/footer.tsx";
+import Sidebar from "./components/utils/sidebars/sidebar.tsx";
+import ModalLogin from "./components/utils/modals/modal.tsx";
+import LoginButtons from "./components/utils/login/loginButtons.tsx"
 
 const App = () => {
   const [open, setOpen] = useState(false);
   const handleToggle = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  return (
-   <>
-    <header className='sticky top-0 z-20'>
-      <Navbar handleToggle={handleToggle}></Navbar>
-    </header>
 
-    <main>
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => setIsOpen(true)
+  const handleOnClose = () => setIsOpen(false);
+  
+  return (
+    <>
+      <header className="sticky top-0 z-50">
+        <Navbar handleToggle={handleToggle} handleOpen={handleOpen}></Navbar>
+      </header>
+      <>
+        <ModalLogin title="Iniciar Sesión" isOpen={isOpen} onClose={handleOnClose} >
+          <LoginButtons></LoginButtons>
+        </ModalLogin>
+      </>
       <>
         <Sidebar open={open} handleClose={handleClose} />
       </>
-      <div>
-        <Title></Title>
-      </div>
-      <div className="titleCarousel">
-        
-        <CarrouselMain></CarrouselMain>
-      </div>
-      <div className='cardSection2'>
-        <CardSection2></CardSection2>
-      </div>
-      <div className='cardSection1'>
-        <CardSection1></CardSection1>
-      </div>
-    </main>
-   
-    <footer>
-      <Footer></Footer>
-    </footer>
-    
-   </>
-  )
-}
 
-export default App
+      <MainPage></MainPage>
+
+      <footer>
+        <Footer></Footer>
+      </footer>
+    </>
+  );
+};
+
+export default App;

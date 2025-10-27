@@ -1,44 +1,43 @@
+@import './cssVars/colors.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import "flowbite";
 
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 * {
   user-select: none;
+  font-family: "Playfair Display", serif;
+  
 }
-body {
-  background-color: black;
-}
+body{
+  background-color: var(--cream-250);
 
+}
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px; 
+  margin: 10px !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: #111; /* fondo del canal */
+  background: var(--pink-200);
   border-radius: 10px;
   margin: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #444, #222);
+  background: var(--pink-300);
   border-radius: 10px;
-  border: 2px solid #111;
+
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #666, #333);
+  background: var(--pink-300);
 }
 
-/* === Scrollbar Firefox === */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #444 #111;
-}
+
 
 /* === Mejora visual en móviles === */
 @media (max-width: 768px) {
@@ -47,6 +46,6 @@ body {
     height: 6px;
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #555, #222);
+    background: var(--pink-300);
   }
 }

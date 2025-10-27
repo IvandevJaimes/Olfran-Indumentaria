@@ -1,4 +1,35 @@
-footer{
-    margin-top: 50px;
+.footer {
+  margin-top: 50px;
+  background-color: var(--pink-500);
+}
+.upBtn {
+  background: var(--pink-700);
+  box-shaddow: var(--shadow-4);
 }
 
+.adress {
+  display: flex;
+  gap: 10px;
+}
+
+@media (min-width: 300px) and (max-width: 499px) {
+  .adress {
+    flex-direction: column;
+    align-items: center;
+  }
+  .adress img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 700px) {
+  .linksGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

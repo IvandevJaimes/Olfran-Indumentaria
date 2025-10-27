@@ -1,0 +1,14 @@
+.modal{
+    background-color: var(--cream-200);
+}
+.modalContainer{
+    z-index:99999;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .modal{
+        width: 90%;
+        
+    }
+
+}

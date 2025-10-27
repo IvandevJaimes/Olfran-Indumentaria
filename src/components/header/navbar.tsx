@@ -2,22 +2,25 @@ import React from "react";
 
 import "./navbar.css";
 
-import olfranLogoSecundario from "../../assets/olfranLogoSecundario.png";
+import manosdeDiosaLogo from "../../assets/Manos-de-Diosa-Logo (1).png";
+import LoginButton from "../utils/buttons/buttonDesign1";
+import BubbleAuth from "../utils/messages/bubbleAuth.tsx";
 
 interface NavbarProps {
   handleToggle: () => void;
+  handleOpen?: () => void;
 }
 
-const navbar: React.FC<NavbarProps> = ({ handleToggle }) => {
+const navbar: React.FC<NavbarProps> = ({ handleToggle, handleOpen}) => {
   return (
     <>
-      <nav className="bg-gray-900 border-gray-200 dark:bg-gray-100 sticky">
-        <div className="flex justify-between items-center mx-auto max-w-screen-xl py-4 px-2">
+      <nav className="navbarTop">
+        <div className="flex justify-between items-center py-4 px-4">
           <div className="flex items-center space-x-3 rtl:space-x-reverse">
             {/* Botón openSidebar al lado del logo, solo mobile */}
             <button
               onClick={handleToggle}
-              className="openSidebar text-gray-400 hover:text-white cursor-pointer md:hidden mr-4"
+              className="openSidebar text-white hover:text-gray-800 cursor-pointer md:hidden mr-4"
               type="button"
               aria-label="Abrir menú"
             >
@@ -40,16 +43,10 @@ const navbar: React.FC<NavbarProps> = ({ handleToggle }) => {
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <img
-                src={olfranLogoSecundario}
-                alt="Logo Olfran"
-                className="olfranLogo2"
+                src={manosdeDiosaLogo}
+                alt="Logo Manos de Diosa"
+                className="logoManosdeDiosa"
               />
-              <div className="olfranTitle flex flex-col leading-tight">
-                <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-                  Olfran
-                </span>
-                <span className="olfranSubTitle text-gray-300">Indumentaria</span>
-              </div>
             </a>
           </div>
           <div className="flex items-center justify-center gap-2">
@@ -79,17 +76,17 @@ const navbar: React.FC<NavbarProps> = ({ handleToggle }) => {
                 </svg>
               </button>
             </section>
-            <section className="searchButtonMb">
+            <section className="searchButtonMb ">
               <button
                 type="button"
-                className="border border-gray-700 bg-gray-900 px-4 py-2 text-m text-gray-400"
+                className="border border-gray-700 bg-gray-900 px-4 py-2 text-m text-gray-400 hover:cursor-pointer hover:border-gray-300 transition duration-200 ease-in-out "
               >
                 <span>
                   <p>Buscar</p>
                 </span>
                 <div>
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 20 20"
@@ -107,14 +104,19 @@ const navbar: React.FC<NavbarProps> = ({ handleToggle }) => {
             </section>
 
             <div className="loginButton flex items-center">
-              <button className="text-sm text-white">Iniciar sesión</button>
+              <LoginButton onClick={handleOpen} size="md" className="" textColor="white" id="">
+                Inciar sesión
+              </LoginButton>
+            
+              <BubbleAuth className="bubble"></BubbleAuth>
+              
             </div>
           </div>
         </div>
       </nav>
 
-      <nav className="bg-gray-800">
-        <div className="max-w-screen-xl px-4 py-3 mx-auto">
+      <nav className="navbarLinks">
+        <div className="px-4 py-3">
           <div className="flex items-center text-center">
             <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
               <li className="ml-4">
@@ -128,12 +130,12 @@ const navbar: React.FC<NavbarProps> = ({ handleToggle }) => {
               </li>
               <li>
                 <a href="#" className="text-white hover:underline">
-                  Productos
+                  Servicios
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white hover:underline">
-                  Nosotros
+                  Cursos
                 </a>
               </li>
               <li>
