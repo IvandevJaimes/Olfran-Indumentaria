@@ -49,6 +49,36 @@ const loginButtons = () => {
         </svg>
         Continuar con Facebook
       </Button>
+      <Button
+        size="xl"
+        textColor="white"
+        className="mailButton flex items-center justify-center text-center w-full gap-4"
+      >
+        <svg
+          className="w-6 h-6 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          width="48"
+          height="48"
+          aria-hidden="true"
+        >
+          <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+          <path d="M22 6l-10 7L2 6" />
+        </svg>
+        Continuar con Correo electrónico
+      </Button>
+      <hr className="border-gray-300"/>
+      <div className="flex text-center justify-center items-center gap-4">
+        <p>¿No tenés una cuenta? </p>
+        <Button size="md" textColor="white" className="registerButton">
+          Registrate acá
+        </Button>
+      </div>
     </div>
   );
 };

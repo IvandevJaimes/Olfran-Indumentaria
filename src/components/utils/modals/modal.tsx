@@ -11,7 +11,6 @@ interface ModalProps {
   children?: React.ReactNode;
   footer?: React.ReactNode;
 }
-
 const Modal: React.FC<ModalProps> = ({
   className,
   isOpen,
@@ -92,7 +91,7 @@ const Modal: React.FC<ModalProps> = ({
 
           {/* Body */}
           <div className="p-4 md:p-5 space-y-4">{children}</div>
-
+          
           {/* Footer */}
           {footer && (
             <div className="flex items-center p-4 md:p-5 border-t border-gray-200 dark:border-gray-600">

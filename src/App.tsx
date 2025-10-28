@@ -6,7 +6,9 @@ import MainPage from "./components/mainPage/mainPage.tsx";
 import Footer from "./components/footer/footer.tsx";
 import Sidebar from "./components/utils/sidebars/sidebar.tsx";
 import ModalLogin from "./components/utils/modals/modal.tsx";
-import LoginButtons from "./components/utils/login/loginButtons.tsx"
+import LoginButtons from "./components/utils/login/loginScreen.tsx"
+
+
 
 const App = () => {
   const [open, setOpen] = useState(false);
